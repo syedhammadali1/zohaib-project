@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zohaib Legal Hub — قانونی خدمات، حلف نامے، اسٹامپ پیپر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:        #FAF6EC;
+    --paper-border: #E8E0CC;
+    --ink:          #1F2D24;
+    --ink-soft:     #3D4F3D;
+    --seal:         #8B1E1E;
+    --seal-dark:    #6E1717;
+    --brass:        #C9A05C;
+    --brass-soft:   #DCC58F;
+    --white:        #FFFDF8;
+
+    --display-ur: 'Noto Nastaliq Urdu', serif;
+    --display-en: 'Spectral', serif;
+    --body-ur:    'Noto Nastaliq Urdu', serif;
+    --body-en:    'Noto Sans', sans-serif;
+    --mono:       'JetBrains Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body-ur);
+    line-height:1.9;
+    font-size:17px;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(31,45,36,0.025) 39px),
+      radial-gradient(ellipse at top right, rgba(201,160,92,0.07), transparent 50%);
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+
+  .en{ font-family:var(--body-en); direction:ltr; }
+
+  /* ============ MOTION ============ */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+  .reveal{
+    opacity:0; transform:translateY(16px);
+    animation:revealUp 0.7s ease forwards;
+  }
+  @keyframes revealUp{ to{ opacity:1; transform:translateY(0); } }
+
+  /* ============ TOP BAR ============ */
+  .topbar{
+    background:var(--ink);
+    color:var(--brass-soft);
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    padding:7px 24px;
+    display:flex; justify-content:space-between; align-items:center;
+    direction:ltr;
+  }
+  .topbar a{ color:var(--brass-soft); }
+  .topbar .file-no::before{ content:"FILE NO. "; opacity:0.7; }
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--paper-border);
+    padding:18px 32px;
+    display:flex; justify-content:space-between; align-items:center;
+    backdrop-filter:blur(6px);
+  }
+  .brand{ display:flex; align-items:center; gap:14px; }
+  .brand-mark{
+    width:92px; height:54px; border-radius:6px;
+    background:var(--white);
+    display:block; overflow:hidden; flex-shrink:0;
+    box-shadow:0 3px 12px rgba(31,45,36,0.12);
+  }
+  .brand-mark img{
+    width:100%; height:100%; display:block; object-fit:cover;
+  }
+  .brand-text h1{
+    font-family:var(--display-ur); font-size:23px; font-weight:700; color:var(--ink);
+  }
+  .brand-text .tagline-en{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.12em;
+    color:var(--ink-soft); text-transform:uppercase; direction:ltr;
+  }
+  nav{ display:flex; gap:28px; font-size:15px; }
+  nav a{ position:relative; padding-bottom:4px; }
+  nav a::after{
+    content:""; position:absolute; right:0; bottom:0; width:0; height:1.5px;
+    background:var(--seal); transition:width 0.25s ease;
+  }
+  nav a:hover::after{ width:100%; }
+  .nav-toggle{ display:none; }
+
+  .btn-whatsapp{
+    background:var(--seal); color:var(--white) !important;
+    padding:11px 22px; border-radius:3px; font-size:14.5px; font-weight:600;
+    display:flex; align-items:center; gap:8px;
+    box-shadow:0 2px 0 var(--seal-dark);
+    transition:transform 0.15s ease;
+  }
+  .btn-whatsapp:hover{ transform:translateY(-1px); }
+  .btn-whatsapp svg{ width:17px; height:17px; }
+
+  /* ============ HERO ============ */
+  .hero{
+    max-width:1180px; margin:0 auto;
+    padding:74px 32px 90px;
+    display:grid; grid-template-columns:1.25fr 0.9fr; gap:50px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em;
+    color:var(--seal); text-transform:uppercase; margin-bottom:18px; direction:ltr;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{ content:""; width:26px; height:1px; background:var(--seal); }
+  .hero h2{
+    font-family:var(--display-ur); font-size:46px; line-height:1.55; font-weight:700;
+    color:var(--ink); margin-bottom:22px;
+  }
+  .hero h2 .accent{ color:var(--seal); }
+  .hero p.lede{
+    font-size:18px; color:var(--ink-soft); max-width:560px; margin-bottom:34px;
+  }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-primary{
+    background:var(--ink); color:var(--white); padding:14px 28px; border-radius:3px;
+    font-size:15.5px; font-weight:600; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-ghost{
+    border:1.5px solid var(--ink); color:var(--ink); padding:13px 26px; border-radius:3px;
+    font-size:15.5px; font-weight:600;
+  }
+  .hero-stats{
+    display:flex; gap:30px; margin-top:42px; font-family:var(--mono); direction:ltr;
+  }
+  .hero-stats div{ text-align:left; }
+  .hero-stats .num{ font-size:26px; font-weight:700; color:var(--ink); }
+  .hero-stats .lbl{ font-size:11px; color:var(--ink-soft); letter-spacing:0.05em; }
+
+  /* ===== SIGNATURE: logo showcase ===== */
+  .seal-wrap{ display:flex; justify-content:center; align-items:center; position:relative; }
+  .logo-showcase{
+    width:min(100%, 430px);
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid rgba(201,160,92,0.38);
+    background:var(--white);
+    box-shadow:0 18px 46px rgba(31,45,36,0.18);
+    animation:sealIn 0.9s cubic-bezier(.2,.9,.25,1) both;
+  }
+  .logo-showcase img{ width:100%; display:block; }
+  @keyframes sealIn{
+    from{ opacity:0; transform:translateY(18px) scale(0.95); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  /* ============ MARQUEE STRIP ============ */
+  .strip{
+    background:var(--ink); color:var(--paper); padding:13px 0; overflow:hidden;
+    border-top:1px solid var(--brass); border-bottom:1px solid var(--brass);
+  }
+  .strip-track{
+    display:flex; gap:46px; white-space:nowrap; font-family:var(--mono); font-size:13px;
+    letter-spacing:0.04em; animation:scrollLeft 32s linear infinite; direction:ltr;
+  }
+  @keyframes scrollLeft{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  .strip-track span{ opacity:0.85; }
+  .strip-track span::after{ content:"•"; margin-right:46px; color:var(--brass); }
+
+  /* ============ SECTION SHELL ============ */
+  section{ max-width:1180px; margin:0 auto; padding:88px 32px; }
+  .section-head{ margin-bottom:54px; max-width:680px; }
+  .section-head .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em; color:var(--seal);
+    text-transform:uppercase; margin-bottom:14px; direction:ltr;
+  }
+  .section-head h3{ font-family:var(--display-ur); font-size:34px; color:var(--ink); margin-bottom:14px; }
+  .section-head p{ color:var(--ink-soft); font-size:16.5px; }
+  .divider{
+    height:1px; background:repeating-linear-gradient(90deg, var(--paper-border) 0 8px, transparent 8px 14px);
+    margin:0 32px;
+  }
+
+  /* ============ FILE TABS — categories nav ============ */
+  .file-tabs{
+    display:flex; gap:6px; overflow-x:auto; padding-bottom:4px; margin-bottom:48px;
+    scrollbar-width:thin;
+  }
+  .file-tabs a{
+    flex-shrink:0; background:var(--white); border:1px solid var(--paper-border);
+    border-bottom:3px solid var(--brass); padding:10px 18px; font-size:13.5px;
+    border-radius:4px 4px 0 0; color:var(--ink-soft); font-weight:600;
+    transition:all 0.2s ease;
+  }
+  .file-tabs a:hover{ border-bottom-color:var(--seal); color:var(--ink); background:var(--white); transform:translateY(-2px); }
+
+  /* ============ CATEGORY CARDS ============ */
+  .cat-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+  .cat-card{
+    background:var(--white); border:1px solid var(--paper-border); border-radius:6px;
+    padding:28px 26px; position:relative; overflow:hidden;
+    transition:border-color 0.25s ease, transform 0.25s ease;
+    scroll-margin-top:140px;
+  }
+  .cat-card:hover{ border-color:var(--brass); transform:translateY(-3px); }
+  .cat-card .tag-no{
+    font-family:var(--mono); font-size:11px; color:var(--brass); letter-spacing:0.08em;
+    position:absolute; top:20px; left:24px; direction:ltr;
+  }
+  .cat-card h4{
+    font-family:var(--display-ur); font-size:21px; color:var(--ink); margin-bottom:6px; margin-top:8px;
+  }
+  .cat-card .h4-en{
+    font-family:var(--display-en); font-style:italic; font-size:12.5px; color:var(--ink-soft);
+    margin-bottom:16px; direction:ltr; display:block;
+  }
+  .cat-card ul{ display:flex; flex-direction:column; gap:7px; }
+  .cat-card ul li{
+    font-size:14.5px; color:var(--ink-soft); padding-right:14px; position:relative;
+  }
+  .cat-card ul li::before{
+    content:"—"; position:absolute; right:0; color:var(--brass);
+  }
+  .cat-card .more{
+    margin-top:12px; font-size:13px; color:var(--seal); font-weight:600;
+  }
+
+  /* ============ STAMP PAPER — special section ============ */
+  .stamp-section{
+    background:var(--ink); color:var(--paper); border-radius:10px;
+    padding:64px 48px; position:relative; overflow:hidden;
+  }
+  .stamp-section::before{
+    content:""; position:absolute; inset:0;
+    background-image:radial-gradient(circle at 85% 20%, rgba(201,160,92,0.12), transparent 45%);
+  }
+  .stamp-section .section-head h3, .stamp-section .section-head p{ color:var(--paper); }
+  .stamp-section .section-head .eyebrow{ color:var(--brass); }
+  .stamp-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; position:relative; z-index:1;
+  }
+  .stamp-chip{
+    background:rgba(250,246,236,0.05); border:1px solid rgba(201,160,92,0.35);
+    border-radius:6px; padding:20px 16px; text-align:center;
+    transition:background 0.2s ease, border-color 0.2s ease;
+  }
+  .stamp-chip:hover{ background:rgba(201,160,92,0.1); border-color:var(--brass); }
+  .stamp-chip .amt{ font-family:var(--mono); font-size:22px; font-weight:700; color:var(--brass-soft); direction:ltr; }
+  .stamp-chip .lbl{ font-family:var(--display-ur); font-size:14.5px; margin-top:6px; }
+  .stamp-extra{
+    margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1;
+  }
+  .stamp-extra span{
+    font-family:var(--mono); font-size:12.5px; color:var(--paper); border:1px solid rgba(250,246,236,0.3);
+    padding:8px 16px; border-radius:20px; direction:ltr;
+  }
+
+  /* ============ PROCESS ============ */
+  .process{ display:grid; grid-template-columns:repeat(4, 1fr); gap:0; position:relative; }
+  .process::before{
+    content:""; position:absolute; top:26px; right:6%; left:6%; height:1px;
+    background:repeating-linear-gradient(90deg, var(--brass) 0 8px, transparent 8px 14px);
+    z-index:0;
+  }
+  .process-step{ text-align:center; position:relative; z-index:1; padding:0 12px; }
+  .process-step .circ{
+    width:52px; height:52px; border-radius:50%; background:var(--paper); border:2px solid var(--seal);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px;
+    font-family:var(--mono); font-weight:700; color:var(--seal); font-size:16px;
+  }
+  .process-step h5{ font-family:var(--display-ur); font-size:17px; color:var(--ink); margin-bottom:8px; }
+  .process-step p{ font-size:13.5px; color:var(--ink-soft); }
+
+  /* ============ TRUST STRIP ============ */
+  .trust-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  .trust-card{ border:1px solid var(--paper-border); border-radius:6px; padding:24px; background:var(--white); }
+  .trust-card .ico{ font-size:26px; margin-bottom:12px; }
+  .trust-card h5{ font-family:var(--display-ur); font-size:16.5px; margin-bottom:6px; }
+  .trust-card p{ font-size:13.5px; color:var(--ink-soft); }
+
+  /* ============ CONTACT / CTA ============ */
+  .cta-band{
+    background:var(--seal); color:var(--white); border-radius:10px;
+    padding:54px 48px; display:flex; justify-content:space-between; align-items:center; gap:30px;
+    flex-wrap:wrap;
+  }
+  .cta-band h3{ font-family:var(--display-ur); font-size:30px; margin-bottom:10px; }
+  .cta-band p{ opacity:0.9; max-width:460px; }
+  .cta-band .btn-whatsapp{ background:var(--white); color:var(--seal) !important; box-shadow:none; }
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--ink); color:var(--paper); padding:54px 32px 28px;
+  }
+  .footer-grid{
+    max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;
+    padding-bottom:36px; border-bottom:1px solid rgba(250,246,236,0.15);
+  }
+  .footer-grid h6{ font-family:var(--mono); font-size:12px; letter-spacing:0.1em; color:var(--brass-soft); text-transform:uppercase; margin-bottom:16px; direction:ltr; }
+  .footer-grid li{ font-size:14px; margin-bottom:9px; color:rgba(250,246,236,0.8); }
+  .footer-grid .brand-text h1{ color:var(--paper); }
+  .footer-bottom{
+    max-width:1180px; margin:18px auto 0; display:flex; justify-content:space-between;
+    font-size:12.5px; color:rgba(250,246,236,0.55); font-family:var(--mono); direction:ltr; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ============ FLOATING WHATSAPP ============ */
+  .float-wa{
+    position:fixed; bottom:26px; left:26px; z-index:60;
+    background:var(--seal); color:var(--white); width:58px; height:58px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(139,30,30,0.4);
+    animation:floatPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes floatPulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.06); } }
+  .float-wa svg{ width:28px; height:28px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:980px){
+    .hero{ grid-template-columns:1fr; padding-top:48px; }
+    .seal-wrap{ order:-1; }
+    .logo-showcase{ max-width:360px; }
+    .cat-grid{ grid-template-columns:repeat(2,1fr); }
+    .stamp-grid{ grid-template-columns:repeat(2,1fr); }
+    .process{ grid-template-columns:repeat(2,1fr); gap:36px; }
+    .process::before{ display:none; }
+    .trust-grid{ grid-template-columns:repeat(2,1fr); }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+    nav{ display:none; }
+  }
+  @media (max-width:640px){
+    .hero h2{ font-size:32px; }
+    .cat-grid{ grid-template-columns:1fr; }
+    .stamp-grid{ grid-template-columns:1fr 1fr; }
+    .process{ grid-template-columns:1fr; }
+    .trust-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; }
+    .cta-band{ flex-direction:column; text-align:center; }
+    section{ padding:60px 20px; }
+    .topbar{ font-size:10.5px; padding:6px 14px; }
+    header{ padding:14px 18px; }
+  }
+
+  /* Keyboard focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--seal); outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="file-no">ZLH/2026/000147</span>
+  <span>Mon – Sat · 10:00 AM – 8:00 PM &nbsp;|&nbsp; Karachi, Pakistan</span>
+</div>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">
+      <img src="assets/zl-hub-logo.png" alt="Z-L Hub logo">
+    </div>
+    <div class="brand-text">
+      <h1>Zohaib Legal Hub</h1>
+      <div class="tagline-en">Documentation &amp; Legal Services</div>
+    </div>
+  </div>
+  <nav>
+    <a href="#services">خدمات</a>
+    <a href="#stamp">اسٹامپ پیپر</a>
+    <a href="#process">طریقہ کار</a>
+    <a href="#contact">رابطہ</a>
+  </nav>
+  <a class="btn-whatsapp" href="https://wa.me/923122331369" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.84.5 3.56 1.46 5.03L2 22l5.25-1.38c1.4.77 3 1.2 4.79 1.2 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.71 14.04c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.03.91 2.18.07.14.12.31.02.49-.1.18-.16.29-.31.45-.16.16-.32.36-.46.48-.15.13-.31.27-.13.6.18.32.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.51 1.53.33.15.52.13.71-.08.19-.2.81-.94 1.03-1.27.21-.32.43-.27.71-.16.29.1 1.83.86 2.14 1.02.32.16.53.24.61.37.08.13.08.76-.16 1.44z"/></svg>
+    واٹس ایپ پر آرڈر کریں
+  </a>
+</header>
+
+<section class="hero" style="padding-bottom:0;">
+  <div class="reveal">
+    <div class="hero-eyebrow">EST. KARACHI · TRUSTED DOCUMENTATION OFFICE</div>
+    <h2>قانونی دستاویزات سے<br>اسٹامپ پیپر تک، <span class="accent">ایک ہی جگہ</span></h2>
+    <p class="lede">حلف نامے، معاہدے، پاور آف اٹارنی، نادرا، پراپرٹی، بینکنگ، یوٹیلیٹی اور سرکاری امور — تمام درخواستیں اور دستاویزات ایک ہی پلیٹ فارم سے، درست اور بروقت۔</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://wa.me/923122331369" target="_blank" rel="noopener">ابھی واٹس ایپ کریں ←</a>
+      <a class="btn-ghost" href="#services">تمام خدمات دیکھیں</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="num">12+</div><div class="lbl">SERVICE<br>CATEGORIES</div></div>
+      <div><div class="num">80+</div><div class="lbl">DOCUMENT<br>TYPES</div></div>
+      <div><div class="num">24h</div><div class="lbl">RESPONSE<br>TIME</div></div>
+    </div>
+  </div>
+  <div class="seal-wrap">
+    <div class="logo-showcase">
+      <img src="assets/zl-hub-logo.png" alt="Z-L Hub logo">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>Affidavits</span><span>Agreements</span><span>Power of Attorney</span><span>NADRA Services</span>
+    <span>Stamp Paper</span><span>Property &amp; Revenue</span><span>Court &amp; Notary</span><span>Utility Bills</span><span>Job Forms</span>
+    <span>Affidavits</span><span>Agreements</span><span>Power of Attorney</span><span>NADRA Services</span>
+    <span>Stamp Paper</span><span>Property &amp; Revenue</span><span>Court &amp; Notary</span><span>Utility Bills</span><span>Admission Forms</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">OUR SERVICES</div>
+    <h3>تمام خدمات ایک نظر میں</h3>
+    <p>نیچے دی گئی فائل ٹیب پر کلک کریں اور متعلقہ کیٹیگری تک فوراً پہنچ جائیں۔</p>
+  </div>
+
+  <div class="file-tabs">
+    <a href="#cat-1">۰۱ حلف نامے</a>
+    <a href="#cat-2">۰۲ معاہدات</a>
+    <a href="#cat-3">۰۳ پاور آف اٹارنی</a>
+    <a href="#cat-4">۰۴ ڈیڈز</a>
+    <a href="#cat-5">۰۵ پراپرٹی و ریوینیو</a>
+    <a href="#cat-6">۰۶ نادرا</a>
+    <a href="#cat-7">۰۷ پولیس درخواستیں</a>
+    <a href="#cat-8">۰۸ کورٹ و نوٹری</a>
+    <a href="#cat-9">۰۹ بینکنگ</a>
+    <a href="#cat-10">۱۰ یوٹیلیٹی</a>
+    <a href="#cat-11">۱۱ جاب فارم</a>
+  </div>
+
+  <div class="cat-grid">
+
+    <div class="cat-card" id="cat-1">
+      <span class="tag-no">CAT.01</span>
+      <h4>حلف نامے</h4>
+      <span class="h4-en">Affidavits</span>
+      <ul>
+        <li>جنرل، میرج، ان میرڈ افیڈیوٹ</li>
+        <li>انکم اور ریزیڈنس افیڈیوٹ</li>
+        <li>کریکٹر و ڈومیسائل افیڈیوٹ</li>
+        <li>لاسٹ ڈاکیومنٹ افیڈیوٹ</li>
+        <li>زکوۃ ڈیکلریشن</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-2">
+      <span class="tag-no">CAT.02</span>
+      <h4>معاہدات</h4>
+      <span class="h4-en">Agreements</span>
+      <ul>
+        <li>رینٹ، سیل اور پرچیز ایگریمنٹ</li>
+        <li>پارٹنرشپ و بزنس ایگریمنٹ</li>
+        <li>ایمپلائمنٹ و سروس ایگریمنٹ</li>
+        <li>لون، گفٹ اور کسٹڈی ایگریمنٹ</li>
+        <li>NDA و وینڈر ایگریمنٹ</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-3">
+      <span class="tag-no">CAT.03</span>
+      <h4>پاور آف اٹارنی</h4>
+      <span class="h4-en">Power of Attorney</span>
+      <ul>
+        <li>جنرل پاور آف اٹارنی (GPA)</li>
+        <li>اسپیشل پاور آف اٹارنی (SPA)</li>
+        <li>پراپرٹی پاور آف اٹارنی</li>
+        <li>کورٹ پاور آف اٹارنی</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-4">
+      <span class="tag-no">CAT.04</span>
+      <h4>ڈیڈز</h4>
+      <span class="h4-en">Deeds</span>
+      <ul>
+        <li>گفٹ ڈیڈ، سیٹلمنٹ ڈیڈ</li>
+        <li>ریلینکوشمنٹ ڈیڈ</li>
+        <li>پارٹنرشپ ڈیڈ</li>
+        <li>ٹرسٹ ڈیڈ</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-5">
+      <span class="tag-no">CAT.05</span>
+      <h4>پراپرٹی و ریوینیو امور</h4>
+      <span class="h4-en">Revenue &amp; Property</span>
+      <ul>
+        <li>انتقال، فرد، جمع بندی</li>
+        <li>رجسٹری و پراپرٹی ویریفیکیشن</li>
+        <li>سکسیشن و لیگل ہیئر سرٹیفکیٹ</li>
+        <li>وراثت اور پراپرٹی ٹرانسفر</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-6">
+      <span class="tag-no">CAT.06</span>
+      <h4>نادرا خدمات</h4>
+      <span class="h4-en">NADRA Services</span>
+      <ul>
+        <li>CNIC کریکشن اور رینیول</li>
+        <li>فیملی رجسٹریشن سرٹیفکیٹ (FRC)</li>
+        <li>بی فارم، CRC، ڈیتھ رجسٹریشن</li>
+        <li>میرج رجسٹریشن، POC و NICOP</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-7">
+      <span class="tag-no">CAT.07</span>
+      <h4>پولیس و انتظامیہ درخواستیں</h4>
+      <span class="h4-en">Police &amp; Admin Applications</span>
+      <ul>
+        <li>SHO، SSP، DIG کو درخواست</li>
+        <li>کمشنر و ڈپٹی کمشنر کو درخواست</li>
+        <li>کریکٹر سرٹیفکیٹ، لاسٹ رپورٹ</li>
+        <li>کمپلینٹ و ویریفیکیشن درخواست</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-8">
+      <span class="tag-no">CAT.08</span>
+      <h4>کورٹ و نوٹری خدمات</h4>
+      <span class="h4-en">Court &amp; Notary</span>
+      <ul>
+        <li>نوٹری پبلک اٹسٹیشن</li>
+        <li>اوتھ کمشنر اٹسٹیشن</li>
+        <li>کورٹ پیٹیشن ڈرافٹنگ</li>
+        <li>لیگل نوٹس اور جواب</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-9">
+      <span class="tag-no">CAT.09</span>
+      <h4>بینکنگ دستاویزات</h4>
+      <span class="h4-en">Banking Documents</span>
+      <ul>
+        <li>اکاؤنٹ اوپننگ فارمز</li>
+        <li>نامینی فارمز</li>
+        <li>لون ڈاکیومنٹیشن</li>
+        <li>اے ٹی ایم ڈسپیوٹ درخواست</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-10">
+      <span class="tag-no">CAT.10</span>
+      <h4>یوٹیلیٹی سروسز</h4>
+      <span class="h4-en">Utility Services</span>
+      <ul>
+        <li>K-Electric / SSGC نیو کنکشن</li>
+        <li>نیم چینج اور لوڈ بڑھانے کی درخواست</li>
+        <li>بلنگ کمپلینٹ</li>
+        <li>میٹر ٹرانسفر و کریکشن</li>
+      </ul>
+    </div>
+
+    <div class="cat-card" id="cat-11">
+      <span class="tag-no">CAT.11</span>
+      <h4>گورنمنٹ و پرائیویٹ جاب سروسز</h4>
+      <span class="h4-en">Government &amp; Private Job Services</span>
+      <ul>
+        <li>آن لائن جاب درخواستیں</li>
+        <li>STS، SPSC، FPSC فارم</li>
+        <li>NTS، PTS، OTS فارم</li>
+        <li>یونیورسٹی داخلہ فارم</li>
+        <li>اسکالرشپ فارم</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="stamp">
+  <div class="stamp-section">
+    <div class="section-head">
+      <div class="eyebrow">E-STAMP &amp; JUDICIAL PAPER</div>
+      <h3>اسٹامپ پیپر سروسز</h3>
+      <p>تمام مالیت کے اسٹامپ پیپر اور ای-اسٹامپ، فوری اور تصدیق شدہ۔</p>
+    </div>
+    <div class="stamp-grid">
+      <div class="stamp-chip"><div class="amt">Rs. 50</div><div class="lbl">اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt">Rs. 100</div><div class="lbl">اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt">Rs. 200</div><div class="lbl">اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt">Rs. 500</div><div class="lbl">اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt">Rs. 1,000</div><div class="lbl">اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt">Rs. 1,500</div><div class="lbl">اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt en" style="font-size:15px;">E-Stamp</div><div class="lbl">ای-اسٹامپ پیپر</div></div>
+      <div class="stamp-chip"><div class="amt en" style="font-size:15px;">Verify</div><div class="lbl">اسٹامپ ویریفیکیشن</div></div>
+    </div>
+    <div class="stamp-extra">
+      <span>Judicial Stamp Paper</span>
+      <span>Non-Judicial Stamp Paper</span>
+      <span>Special Stamp Paper</span>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-head" style="margin:0 auto 60px; text-align:center; max-width:600px;">
+    <div class="eyebrow" style="justify-content:center; display:flex;">HOW IT WORKS</div>
+    <h3>طریقہ کار صرف چار اقدامات میں</h3>
+  </div>
+  <div class="process">
+    <div class="process-step">
+      <div class="circ">۰۱</div>
+      <h5>رابطہ کریں</h5>
+      <p>واٹس ایپ یا فون پر اپنی ضرورت بتائیں</p>
+    </div>
+    <div class="process-step">
+      <div class="circ">۰۲</div>
+      <h5>تفصیلات بھیجیں</h5>
+      <p>مطلوبہ معلومات اور دستاویزات شیئر کریں</p>
+    </div>
+    <div class="process-step">
+      <div class="circ">۰۳</div>
+      <h5>تیاری و تصدیق</h5>
+      <p>ہم دستاویز تیار کر کے آپ سے تصدیق لیں گے</p>
+    </div>
+    <div class="process-step">
+      <div class="circ">۰۴</div>
+      <h5>ڈیلیوری</h5>
+      <p>مکمل دستاویز آپ تک پہنچائی جائے گی</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="ico">🛡️</div>
+      <h5>تصدیق شدہ عمل</h5>
+      <p>ہر دستاویز قانونی تقاضوں کے مطابق تیار کی جاتی ہے</p>
+    </div>
+    <div class="trust-card">
+      <div class="ico">⏱️</div>
+      <h5>بروقت ڈیلیوری</h5>
+      <p>زیادہ تر کام 24 سے 48 گھنٹوں میں مکمل</p>
+    </div>
+    <div class="trust-card">
+      <div class="ico">🤝</div>
+      <h5>ون ونڈو حل</h5>
+      <p>قانونی، نادرا، پراپرٹی اور بینکنگ — سب ایک جگہ</p>
+    </div>
+    <div class="trust-card">
+      <div class="ico">📍</div>
+      <h5>مقامی تجربہ</h5>
+      <p>کراچی کے سرکاری دفاتر اور طریقہ کار سے بخوبی واقفیت</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="cta-band">
+    <div>
+      <h3>اپنی دستاویز کا کام آج ہی شروع کریں</h3>
+      <p>واٹس ایپ پر صرف ایک پیغام بھیجیں، باقی کام ہمارے اوپر چھوڑ دیں۔</p>
+    </div>
+    <a class="btn-whatsapp" href="https://wa.me/923122331369" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.84.5 3.56 1.46 5.03L2 22l5.25-1.38c1.4.77 3 1.2 4.79 1.2 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.71 14.04c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.03.91 2.18.07.14.12.31.02.49-.1.18-.16.29-.31.45-.16.16-.32.36-.46.48-.15.13-.31.27-.13.6.18.32.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.51 1.53.33.15.52.13.71-.08.19-.2.81-.94 1.03-1.27.21-.32.43-.27.71-.16.29.1 1.83.86 2.14 1.02.32.16.53.24.61.37.08.13.08.76-.16 1.44z"/></svg>
+      واٹس ایپ پر بات کریں
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">
+        <div class="brand-mark">
+          <img src="assets/zl-hub-logo.png" alt="Z-L Hub logo">
+        </div>
+        <div class="brand-text"><h1 style="font-size:20px;">Zohaib Legal Hub</h1></div>
+      </div>
+      <p style="font-size:13.5px; color:rgba(250,246,236,0.7); max-width:260px;">قانونی دستاویزات، حلف نامے، درخواستیں اور سرکاری امور کے لیے کراچی کا معتبر نام۔</p>
+    </div>
+    <div>
+      <h6>SERVICES</h6>
+      <ul>
+        <li><a href="#cat-1">حلف نامے</a></li>
+        <li><a href="#cat-2">معاہدات</a></li>
+        <li><a href="#cat-6">نادرا خدمات</a></li>
+        <li><a href="#stamp">اسٹامپ پیپر</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>MORE</h6>
+      <ul>
+        <li><a href="#cat-5">پراپرٹی و ریوینیو</a></li>
+        <li><a href="#cat-8">کورٹ و نوٹری</a></li>
+        <li><a href="#cat-9">بینکنگ</a></li>
+        <li><a href="#cat-10">یوٹیلیٹی</a></li>
+        <li><a href="#cat-11">جاب و داخلہ فارم</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>CONTACT</h6>
+      <ul>
+        <li class="en" style="direction:ltr; text-align:right;">+92 312 2331369</li>
+        <li>کراچی، پاکستان</li>
+        <li>پیر تا ہفتہ: ۱۰ تا ۸ بجے</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Zohaib Legal Hub. All rights reserved.</span>
+    <span>FILE NO. ZLH/2026/000147</span>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/923122331369" target="_blank" rel="noopener" aria-label="WhatsApp پر رابطہ کریں">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.84.5 3.56 1.46 5.03L2 22l5.25-1.38c1.4.77 3 1.2 4.79 1.2 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.71 14.04c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2.03.91 2.18.07.14.12.31.02.49-.1.18-.16.29-.31.45-.16.16-.32.36-.46.48-.15.13-.31.27-.13.6.18.32.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.51 1.53.33.15.52.13.71-.08.19-.2.81-.94 1.03-1.27.21-.32.43-.27.71-.16.29.1 1.83.86 2.14 1.02.32.16.53.24.61.37.08.13.08.76-.16 1.44z"/></svg>
+</a>
+
+</body>
+</html>
